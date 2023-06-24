@@ -1,0 +1,49 @@
+/** makeup:
+blush (10)
+foundation (12)
+eyeshadow (7)
+concealer (12)
+lipstick (8)
+lip tint (10)
+lip balm (4)
+mascara (15)
+beauty blender (8)
+lip gloss (15)
+brush kit (5)
+eyelash (6)
+setting spray (10)
+powder (7)
+skin tint (10)
+**/
+
+CREATE TABLE makeup (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, aisle INTEGER);
+
+INSERT INTO makeup VALUES (1, "blush", 10, 8, 2);
+INSERT INTO makeup VALUES (2, "foundation", 12, 24, 2);
+INSERT INTO makeup VALUES (3, "eyeshadow", 7, 14, 1);
+INSERT INTO makeup VALUES (4, "concealer", 12, 15, 2);
+INSERT INTO makeup VALUES (5, "lipstick", 8, 6, 1);
+INSERT INTO makeup VALUES (6, "lip tint", 10, 4, 1);
+INSERT INTO makeup VALUES (7, "lip balm", 4, 2, 1);
+INSERT INTO makeup VALUES (8, "mascara", 15, 9, 1);
+INSERT INTO makeup VALUES (9, "beauty blender", 8, 2, 1);
+INSERT INTO makeup VALUES (10, "lip gloss", 15, 3, 1);
+INSERT INTO makeup VALUES (11, "brush kit", 5, 30, 1);
+INSERT INTO makeup VALUES (12, "eyelash", 6, 12, 1);
+INSERT INTO makeup VALUES (13, "setting spray", 10, 11, 2);
+INSERT INTO makeup VALUES (14, "powder", 7, 15, 2);
+INSERT INTO makeup VALUES (15, "skin tint", 10, 17, 2);
+SELECT * FROM makeup;
+
+--display the database ordered by price. 
+SELECT * FROM makeup WHERE price > 0 ORDER BY price;
+
+--what is the avg price of items in the aisle 2? 
+SELECT AVG(price) "avg item price"
+FROM makeup 
+WHERE aisle = 2;
+
+
+
+
+
